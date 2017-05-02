@@ -1,0 +1,25 @@
+{
+  "name": "rpgpart2",
+  "version": "1.0.0",
+  "description": "rpg game for testing and server practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Husspm/RPGrevisited.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Husspm/RPGrevisited/issues"
+  },
+  "homepage": "https://github.com/Husspm/RPGrevisited#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "express-handlebars": "^3.0.0",
+    "handlebars": "^4.0.7",
+    "path": "^0.12.7"
+  }
+}
