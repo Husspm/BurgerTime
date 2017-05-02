@@ -1,25 +1,27 @@
 {
-  "name": "rpgpart2",
+  "name": "burgertime",
   "version": "1.0.0",
-  "description": "rpg game for testing and server practice",
+  "description": "burger app for testing and server practice",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Husspm/RPGrevisited.git"
+    "url": "git+https://github.com/Husspm/BurgerTime.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Husspm/RPGrevisited/issues"
   },
-  "homepage": "https://github.com/Husspm/RPGrevisited#readme",
+  "homepage": "https://github.com/Husspm/BurgerTime#readme",
   "dependencies": {
     "express": "^4.15.2",
     "express-handlebars": "^3.0.0",
     "handlebars": "^4.0.7",
+    "method-override": "^2.3.8",
+    "mysql": "^2.13.0",
     "path": "^0.12.7"
   }
 }

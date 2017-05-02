@@ -1,8 +1,9 @@
-var express = require("express");
-var bodyParser = require("body-parser");
-var path = require("path");
-var app = express();
-var PORT = process.env.PORT || 8080;
+var express = require("express"),
+    bodyParser = require("body-parser"),
+    path = require("path"),
+    app = express(),
+    method = require("method-override"),
+    PORT = process.env.PORT || 8080;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -15,14 +16,12 @@ app.listen(PORT, function() {
 });
 var exphbs = require("express-handlebars");
 
-var testWords = [
-    { name: "Person One", occ: "Designer" },
-    { name: "Person Two", occ: "Backend Devoloper" },
-    { name: "Person Three", occ: "Project Manager" }
-];
+var items = [];
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
-app.get("/", function(req, res) {
-    res.render("index", { options: testWords });
+
+
+app.get("/", function(req, response) {
+    response.render("index");
 });
