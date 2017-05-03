@@ -10,4 +10,4 @@ connection.connect(function(err) {
     if (err) throw err;
     console.log("Welcome you are connected as id + " + connection.threadId);
 });
-exports.connection = connection;
+module.exports = connection;

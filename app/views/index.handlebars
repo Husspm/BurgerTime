@@ -1,6 +1,9 @@
-<h2>Handlebars success</h2>
-{{#each options}}
-<h3>{{this.burger_name}}</h3>
-<h4>{{this.id}}</h4>
+<h2>Burgers to enjoy</h2>
+{{#each burgers}}
+<div class=burger{{this.id}}>
+<h2>Burger's unique id: {{this.id}}</h2>
+<h2>Burger's name: {{this.burger_name}}</h2>
+<h3>{{this.devoured}}</h3>
+<button class = btn btn-large value={{this.id}}>Eat Me</button>
+</div>
 {{/each}}
-<h5>Passing objects into Handlebars, success</h5>
