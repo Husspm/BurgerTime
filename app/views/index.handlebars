@@ -4,7 +4,10 @@
 <h2>Burger's unique id: {{this.id}}</h2>
 <h2>Burger's name: {{this.burger_name}}</h2>
 <h3>{{this.devoured}}</h3>
-<button class = btn btn-large value={{this.id}}>Eat Me</button>
+        <form action="/{{this.id}}?_method=PUT" method="POST">
+          <input type="hidden" name="devoured" value=1>
+          <button type="submit">EAT ME!</button>
+        </form>
 </div>
 {{/each}}
 <h2>Add a Burger</h2>

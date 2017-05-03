@@ -11,8 +11,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(express.static(path.join(__dirname)));
+app.use(method("_method"));
 //initalizing the listener
 app.listen(PORT, function() {
+    //for conformation
     console.log("App listening on PORT " + PORT);
 });
 //handlebars for rendering html

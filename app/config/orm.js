@@ -1,8 +1,9 @@
-db = require("./connection.js");
+//resusing DataBaseAccess so I know what it means
+DBA = require("./connection.js");
 
 //ripped straight from the cats example from the day I missed :(
 //although all my other info is auto generated so kinda don't need it
-//but still good to have and see as an example of how to keep formatting modular
+//but still good to have and see as an example of how to keep formatting modular ;) <3
 function printQuestionMarks(num) {
     var arr = [];
     for (var i = 0; i < num; i++) {
@@ -10,11 +11,24 @@ function printQuestionMarks(num) {
     }
     return arr.toString();
 }
+// also ripped straight from cats example.........
+//again probably don't need since it i really one value to change
+function objToUpdate(ob) {
+    var arr = [];
+
+    for (var key in ob) {
+        if (Object.hasOwnProperty.call(ob, key)) {
+            arr.push(key + "=" + ob[key]);
+        }
+    }
+
+    return arr.toString();
+}
 
 var orm = {
     selectAll: function(tableName, cb) {
         var queryURL = "SELECT * FROM " + tableName + ";";
-        db.query(queryURL, function(err, results) {
+        DBA.query(queryURL, function(err, results) {
             if (err) throw err;
             cb(results);
         });
@@ -29,12 +43,27 @@ var orm = {
         queryString += "VALUES (";
         queryString += printQuestionMarks(vals.length);
         queryString += ") ";
-        db.query(queryString, vals, function(err, result) {
+        DBA.query(queryString, vals, function(err, result) {
+            if (err) {
+                throw err;
+            }
+            cb(result);
+        });
+    },
+    update: function(tableName, objColVals, condition, cb) {
+        var queryString = "UPDATE " + tableName;
+
+        queryString += " SET ";
+        queryString += objToUpdate(objColVals);
+        queryString += " WHERE ";
+        queryString += condition;
+        DBA.query(queryString, function(err, result) {
             if (err) {
                 throw err;
             }
             cb(result);
         });
     }
-};
+}
+
 module.exports = orm;
