@@ -5,7 +5,93 @@ body {
 }
 
 body {
-    background: radial-gradient( slategray, 50%, darkslategray, lightslategray);
-    background-size: 10px 10px;
+    background: url(http://www.locappy.com/blog/wp-content/uploads/2014/12/burger-and-lobster-restaurant-city-breadtst.png);
+    background-size: cover;
     color: black;
+}
+
+.clip-mask {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+    background: radial-gradient(brown, yellow, brown);
+    background-size: 10px 10px;
+    opacity: 0.1;
+}
+
+.subBG {
+    height: 100%;
+    width: 80%;
+    position: fixed;
+    z-index: -1;
+    left: 10%;
+    background: url(http://www.ozarlington.com/wp-content/uploads/2017/04/bar-buffet.jpg);
+    opacity: 0.3;
+}
+
+.sub-mask,
+.sub-mask2 {
+    height: 100%;
+    width: 80%;
+    position: fixed;
+    z-index: -1;
+    left: 10%;
+    background: radial-gradient(yellow, red, yellow);
+    background-size: 10px 10px;
+    opacity: 0.2;
+}
+
+.sub-mask {
+    background: white;
+    opacity: 0.2;
+}
+
+.headline {
+    background: url(http://www.seriouseats.com/images/2016/04/20160428-memorial-day-burger-recipes-roundup-19.jpg);
+    background-size: cover;
+    background-position-y: -240px;
+    width: 70%;
+    margin: 0 auto;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.addContent {
+    background: radial-gradient(orange, red, orange);
+    background-size: 3px 3px;
+    text-align: center;
+    box-shadow: inset 0 0 49px 11px black;
+    filter: saturate(1);
+    font-family: "Bangers";
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+label {
+    font-family: "Carter One";
+    font-size: 18px;
+}
+
+button {
+    background: black;
+    color: white;
+    font-size: 22px;
+    transition-duration: 2s;
+    transition-property: background, color, border-radius;
+    font-family: "Bangers";
+    padding: 10px;
+    border-radius: 20px;
+}
+
+button:hover {
+    background: white;
+    color: black;
+    border-radius: 60px;
+}
+
+h2 {
+    font-family: "Bangers";
 }

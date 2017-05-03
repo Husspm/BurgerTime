@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale = 1.0">
     <!--link to bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!--link to google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Carter+One" rel="stylesheet">
     <!--link to external css-->
     <link id="style-change" rel="stylesheet" href="public/assets/css/style.css">
     <title>HandleBars Testing</title>
@@ -14,14 +16,37 @@
 </head>
 
 <body>
+    <div class="clip-mask">
+    </div>
+    <div class="subBG">
+    </div>
+    <div class="sub-mask">
+    </div>
+    <div class="sub-mask2">
+    </div>
     <div class="container">
-        <h1>TESTING bootstrap: success, jquery and js link is a success</h1>
+        <div class="row headline">
+            <div class="col-md-2 HLmask"></div>
+            <div class="col-md-8 addContent">
+        <h2>Add a Burger</h2>
+        <form class="create-update-form" action="/" method="POST">
+            <div class="form-group">
+                <label for="bur">Burger Name:</label>
+                <input type="text" id="bur" name="name">
+            </div>
+            <button type="submit">Add Burger</button>
+        </form>
+            </div>
+            <div class="col-md-2 HLmask2"></div>
+        </div>
+        <div class="row">
     {{{body}}}
-	</div>
+	    </div>
+    </div>
 </body>
 <!--link to jQuery-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <!--Link to external js-->
 <script src="public/assets/js/logic.js"></script>
 
-</html>`
+</html>

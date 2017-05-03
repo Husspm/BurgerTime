@@ -6,9 +6,9 @@ router.get("/", function(req, res) {
     burger.all(function(data) {
         for (var index = 0; index < data.length; index++) {
             if (data[index].devoured === 0) {
-                data[index].devoured = "You haven't eaten this one yet";
+                data[index].devoured = false;
             } else {
-                data[index].devoured = "You ate it already, what did you think";
+                data[index].devoured = true;
             }
         }
         var renderObject = {
