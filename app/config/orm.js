@@ -1,7 +1,8 @@
 db = require("./connection.js");
 
 //ripped straight from the cats example from the day I missed :(
-
+//although all my other info is auto generated so kinda don't need it
+//but still good to have and see as an example of how to keep formatting modular
 function printQuestionMarks(num) {
     var arr = [];
     for (var i = 0; i < num; i++) {
@@ -28,7 +29,7 @@ var orm = {
         queryString += "VALUES (";
         queryString += printQuestionMarks(vals.length);
         queryString += ") ";
-        connection.query(queryString, vals, function(err, result) {
+        db.query(queryString, vals, function(err, result) {
             if (err) {
                 throw err;
             }

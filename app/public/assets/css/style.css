@@ -7,11 +7,5 @@ body {
 body {
     background: radial-gradient( slategray, 50%, darkslategray, lightslategray);
     background-size: 10px 10px;
-    color: white;
-}
-
-.eaten {
-    position: absolute;
-    top: 40px;
-    right: 100px;
+    color: black;
 }
