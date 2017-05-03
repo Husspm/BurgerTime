@@ -1,4 +1,4 @@
-//DBA DataBaseAccess
+//DBA = DataBaseAccess
 var DBA = require("mysql"),
     connection = DBA.createConnection({
         host: "localhost",

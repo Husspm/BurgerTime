@@ -7,6 +7,8 @@ router.get("/", function(req, res) {
         for (var index = 0; index < data.length; index++) {
             if (data[index].devoured === 0) {
                 data[index].devoured = "You haven't eaten this one yet";
+            } else {
+                data[index].devoured = "You ate it already, what did you think";
             }
         }
         var renderObject = {
