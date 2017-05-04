@@ -5,7 +5,7 @@ body {
 }
 
 body {
-    background: url(http://www.locappy.com/blog/wp-content/uploads/2014/12/burger-and-lobster-restaurant-city-breadtst.png);
+    /*background: url(http://www.locappy.com/blog/wp-content/uploads/2014/12/burger-and-lobster-restaurant-city-breadtst.png);*/
     background-size: cover;
     color: black;
 }
@@ -26,7 +26,7 @@ body {
     position: fixed;
     z-index: -1;
     left: 25%;
-    background: url(http://www.ozarlington.com/wp-content/uploads/2017/04/bar-buffet.jpg);
+    /*background: url(http://www.ozarlington.com/wp-content/uploads/2017/04/bar-buffet.jpg);*/
     opacity: 0.7;
 }
 
@@ -43,7 +43,7 @@ body {
 }
 
 .headline {
-    background: url(http://www.seriouseats.com/images/2016/04/20160428-memorial-day-burger-recipes-roundup-19.jpg);
+    /*background: url(http://www.seriouseats.com/images/2016/04/20160428-memorial-day-burger-recipes-roundup-19.jpg);*/
     background-size: cover;
     background-position-y: -240px;
     width: 70%;
