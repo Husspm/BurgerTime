@@ -1,23 +1,24 @@
 var database = require("../models");
-console.log(database);
+console.log("PHASE 3");
 module.exports = function(app) {
     app.get("/", function(req, res) {
         res.render("index");
     });
 
-    app.get("/api/burgers", function(req, res) {
-        database.burger.findAll({}).then(function(databaseAll) {
-            res.json(databaseAll);
+    app.get("/", function(req, res) {
+        database.Burger.findAll({}).then(function(databaseAll) {
+            console.log(databaseAll);
+            res.render("index", { burgers: databaseAll });
         });
     });
 
-
-    // POST route for saving a new post
-    app.post("/api/burgers", function(req, res) {
-        database.burger.create({
+    app.post("/", function(req, res) {
+        database.Burger.create({
             burger_name: req.body.name
-        }).then(function(databasePost) {
-            res.json(databasePost);
+        }).then(function() {
+            database.Burger.findAll({}).then(function(databasePosts) {
+                res.render("index", { burgers: databasePosts });
+            });
         });
     });
 };
