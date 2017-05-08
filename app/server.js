@@ -25,6 +25,5 @@ db.sequelize.sync({ force: true }).then(function() {
 var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
-
 //routes from burger controllers
 require("./routes/burgers_controllers.js")(app);

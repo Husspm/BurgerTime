@@ -1,4 +1,4 @@
-console.log("PHASE 2");
+console.log("BURGER pass");
 module.exports = function(sequelize, DataTypes) {
     var Burger = sequelize.define("Burger", {
         burger_name: {
@@ -11,6 +11,12 @@ module.exports = function(sequelize, DataTypes) {
         devoured: {
             type: DataTypes.BOOLEAN,
             defaultValue: false
+        }
+    }, {
+        classMethods: {
+            associate: function(models) {
+                Burger.belongsTo(models.Chef);
+            }
         }
     });
     return Burger;
