@@ -1,15 +1,17 @@
+{{> burgers/home}}
 <div class="row headline">
     <div class="col-md-2 HLmask"></div>
     <div class="col-md-8 addContent">
-<h2>Welcome add your name to log in</h2>
+<h2 id="mainHL">Welcome add your name to log in</h2>
 <form class="create-update-form" action="/chefs" method="POST">
     <div class="form-group">
+        <div class="inputBox">
         <label for="chef">Chef Name:</label>
         <input type="text" id="chef" name="chef">
+        </div>
     </div>
     <button type="submit">Add Chef</button>
 </form>
     </div>
     <div class="col-md-2 HLmask2"></div>
 </div>
-<h2>Welcome{{chefs.chef_name}}</h2>

@@ -4,6 +4,10 @@ module.exports = function(sequelize, DataTypes) {
         chef_name: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        active: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: true
         }
     });
     return Chef;

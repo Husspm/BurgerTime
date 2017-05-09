@@ -5,9 +5,17 @@ body {
 }
 
 body {
+    color: black;
+}
+
+.clip-mask {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+    filter: blur(4px);
     background: radial-gradient(white, 40%, brown, black, brown, white);
     background-size: 60px 60px;
-    color: black;
 }
 
 .subBG {
@@ -18,6 +26,7 @@ body {
     background: radial-gradient(red, 40%, white, orange, white, red, white, orange, white, red);
     background-size: 15px 15px;
     opacity: 0.8;
+    filter: saturate(136%);
 }
 
 .sub-mask2 {
@@ -29,6 +38,50 @@ body {
     background: url(blank2.png);
     background-size: 600px 600px;
     opacity: 0.5;
+}
+
+.sub-mask {
+    position: fixed;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+.container-fluid {
+    border-bottom: 15px solid black;
+}
+
+.chefHeader {
+    background: radial-gradient(orange, red, white, red, orange, red, white, red, black);
+    background-size: 15px 15px;
+    padding: 5px;
+    color: orange;
+    text-align: center;
+    text-shadow: 1px 0 1px black, 0 1px 1px black;
+    filter: saturate(36%);
+}
+
+#pageHeadline,
+a {
+    background: rgba(255, 255, 255, 0.8);
+    display: inline-block;
+    padding: 10px;
+    border: 3px solid black;
+}
+
+#chefLink {
+    margin: 0;
+}
+
+a {
+    color: orange;
+    font-family: "Carter One", cursive;
+    transition: 4s color;
+}
+
+a:hover,
+a:focus {
+    color: orangered;
 }
 
 .headline {
@@ -52,29 +105,43 @@ body {
     box-shadow: 0 5px 20px 0 black;
 }
 
-#mainHL {
-    background: radial-gradient( orange, red, white, red, white);
+7 #mainHL {
+    background: radial-gradient( orange, 30%, red, white, red, white);
     background-size: 10px 10px;
     display: inline-block;
     padding: 20px;
     border: 5px solid black;
+    color: orange;
     box-shadow: 0 10px 20px 0 black;
-    text-shadow: 2px 0 1px white, 0 2px 1px white;
+    text-shadow: 2px 0 1px black, 0 2px 1px black;
+}
+
+label {
+    font-family: "Carter One", cursive;
+    font-size: 25px;
+}
+
+.inputBox {
+    background: radial-gradient(red, orange, white, red, green);
+    background-size: 10px 10px;
+    display: inline-block;
+    padding: 10px;
+    border: 3px solid black;
+    box-shadow: 0 10px 20px 0 black;
+    font-size: 20px;
+    text-shadow: 0 2px 0 orange, 2px 0 0 orange;
 }
 
 .container {
     background: white;
     margin-bottom: 40px;
-}
-
-label {
-    font-family: "Carter One", cursive;
-    font-size: 18px;
+    border: 15px solid black;
+    border-top: 0px;
 }
 
 button {
     background: black;
-    color: white;
+    color: orange;
     font-size: 22px;
     transition-duration: 2s;
     transition-property: background, color, border-radius;

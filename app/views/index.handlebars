@@ -1,55 +1,57 @@
-<div class="row headline">
-    <div class="col-md-2 HLmask"></div>
-    <div class="col-md-8 addContent">
-<h2 id="mainHL">Make your own Burger</h2>
-<form class="create-update-form" action="/" method="POST">
-    <div class="form-group">
-        {{#unless burgers}}
-        <label for"chef">Welcome {{chef.chef_name}}</label>
-        <input type="hidden" name="chefId" value={{chef.id}}>
-        <br>
-        {{/unless}}
-        {{#if burgers.ChefId}}
-        <label for"chef">Welcome {{chef.chef_name}}</label>
-        <input type="hidden" name="chefId" value={{chef.id}}>
-        <br>
-        {{/if}}
-        <div class="inputBox">
-        <label for="bur">Burger Name:</label>
-        <input type="text" id="bur" name="name">
+{{> burgers/chef}}
+<div class = "container">
+    <div class="row headline">
+        <div class="col-md-2 HLmask"></div>
+        <div class="col-md-8 addContent">
+    <h2 id="mainHL">Make your own Burger</h2>
+    <form class="create-update-form" action="/" method="POST">
+        <div class="form-group">
+            <div class="inputBox">
+                {{#unless burgers}}
+                <label for "chef">Welcome {{chefs.chef_name}}</label>
+                <input type="hidden" id="chef" name = "chefId" value={{chefs.id}}>
+                <br>
+                {{/unless}}
+            <label for="bur">Burger Name:</label>
+            <input type="text" id="bur" name="name">
+            </div>
         </div>
+        <button type="submit">Add Burger</button>
+    </form>
+        </div>
+        <div class="col-md-2 HLmask2"></div>
     </div>
-    <button type="submit">Add Burger</button>
-</form>
+    <div class="row">
+    <div class="col-md-6">
+    {{#each burgers}}
+    {{#unless this.devoured}}
+      <div class=burger{{this.devoured}}>
+    {{#if this.ChefId}}
+    <h2>Created by {{this.Chef.chef_name}}</h2>
+    {{/if}}
+        <h2>Burger's unique id: {{this.id}}</h2>
+        <h2>Burger's name: {{this.burger_name}}</h2>
+          <form action="/?_method=PUT" method="POST">
+            <input type="hidden" name="devoured" value= 1 >
+            <input type="hidden" name="id" value={{this.id}}>
+            <button type="submit">EAT ME!</button>
+          </form>
+      </div>
+    {{/unless}}
+    {{/each}}
     </div>
-    <div class="col-md-2 HLmask2"></div>
+    <div class="col-md-6">
+    {{#each burgers}}
+    {{#if this.devoured}}
+    <div class=burger{{this.devoured}}>
+    {{#if this.ChefId}}
+    <h2>Created by {{this.Chef.chef_name}}</h2>
+    {{/if}}
+      <h2>Burger's unique id: {{this.id}}</h2>
+      <h2>Burger's name: {{this.burger_name}}</h2>
+    </div>
+    {{/if}}  
+    {{/each}}
+    </div>
 </div>
-<div class="row">
-<div class="col-md-6">
-{{#each burgers}}
-{{#unless this.devoured}}
-  <div class=burger{{this.devoured}}>
-{{#if this.ChefId}}
-<h2>Created by {{this.Chef.chef_name}}</h2>
-{{/if}}
-    <h2>Burger's unique id: {{this.id}}</h2>
-    <h2>Burger's name: {{this.burger_name}}</h2>
-      <form action="/?_method=PUT" method="POST">
-        <input type="hidden" name="devoured" value= 1 >
-        <input type="hidden" name="id" value={{this.id}}>
-        <button type="submit">EAT ME!</button>
-      </form>
-  </div>
-{{/unless}}
-{{/each}}
-</div>
-<div class="col-md-6">
-{{#each burgers}}
-{{#if this.devoured}}
-<div class=burger{{this.devoured}}>
-  <h2>Burger's unique id: {{this.id}}</h2>
-  <h2>Burger's name: {{this.burger_name}}</h2>
-</div>
-{{/if}}  
-{{/each}}
 </div>

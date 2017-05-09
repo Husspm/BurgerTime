@@ -28,7 +28,7 @@ module.exports = function(app) {
             }
         }).then(function() {
             database.Burger.findAll({}).then(function(data) {
-                res.render("index", { burgers: data });
+                res.redirect("/");
             });
         });
     });
@@ -39,7 +39,17 @@ module.exports = function(app) {
         database.Chef.create({
             chef_name: req.body.chef
         }).then(function(newChef) {
-            res.render("index", { chef: newChef });
+            res.render("index", { chefs: newChef });
+        });
+    });
+    app.post("/chefs/:", function(req, res) {
+        database.Burger.create({
+            burger_name: req.body.name,
+            ChefId: req.body.chefId
+        }).then(function() {
+            database.Burger.findAll({ include: [database.Chef] }).then(function(data) {
+                res.render("index", { burgers: data });
+            });
         });
     });
 }; //ends exports function
