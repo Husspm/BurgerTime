@@ -15,3 +15,8 @@ SELECT * FROM burgers;
 SELECT * FROM chefs;
 
 DROP TABLE burgers;
+
+use test;
+
+CREATE DATABASE test;
+SELECT * FROM clients;
