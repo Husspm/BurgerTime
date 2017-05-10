@@ -7,11 +7,11 @@
     <form class="create-update-form" action="/" method="POST">
         <div class="form-group">
             <div class="inputBox">
-                {{#unless burgers}}
+                {{#if chefs}}
                 <label for "chef">Welcome {{chefs.chef_name}}</label>
                 <input type="hidden" id="chef" name = "chefId" value={{chefs.id}}>
                 <br>
-                {{/unless}}
+                {{/if}}
             <label for="bur">Burger Name:</label>
             <input type="text" id="bur" name="name">
             </div>
@@ -27,7 +27,7 @@
     {{#unless this.devoured}}
       <div class=burger{{this.devoured}}>
     {{#if this.ChefId}}
-    <h2>Created by {{this.Chef.chef_name}}</h2>
+    <h2>Created by <a href="/chefs/{{this.Chef.id}}/">{{this.Chef.chef_name}}</a></h2>
     {{/if}}
         <h2>Burger's unique id: {{this.id}}</h2>
         <h2>Burger's name: {{this.burger_name}}</h2>

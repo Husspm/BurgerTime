@@ -4,7 +4,6 @@ module.exports = function(app) {
 
     app.get("/", function(req, res) {
         database.Burger.findAll({ include: database.Chef }).then(function(data) {
-            console.log(JSON.stringify(data));
             res.render("index", { burgers: data });
         });
     });
@@ -42,14 +41,14 @@ module.exports = function(app) {
             res.render("index", { chefs: newChef });
         });
     });
-    app.post("/chefs/:", function(req, res) {
-        database.Burger.create({
-            burger_name: req.body.name,
-            ChefId: req.body.chefId
-        }).then(function() {
-            database.Burger.findAll({ include: [database.Chef] }).then(function(data) {
-                res.render("index", { burgers: data });
-            });
+    app.get("/chefs/:id", function(req, res) {
+        database.Burger.findAll({
+            include: [database.Chef],
+            where: {
+                ChefId: req.params.id
+            }
+        }).then(function(data) {
+            res.render("index", { burgers: data });
         });
     });
 }; //ends exports function
