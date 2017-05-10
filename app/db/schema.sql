@@ -10,3 +10,13 @@ devoured BOOLEAN NOT NULL DEFAULT FALSE,
 date_made TIMESTAMP,
 PRIMARY KEY(id)
 );
+
+SELECT * FROM burgers;
+SELECT * FROM chefs;
+
+DROP TABLE burgers;
+
+use test;
+
+CREATE DATABASE test;
+SELECT * FROM clients;

@@ -1,7 +1,7 @@
 {
-    "name": "app",
+    "name": "burgertime",
     "version": "1.0.0",
-    "description": "Test app using express, handlebars, and mysql",
+    "description": "burger time updated with sequelize",
     "main": "server.js",
     "dependencies": {
         "body-parser": "^1.17.1",
@@ -10,7 +10,8 @@
         "handlebars": "^4.0.8",
         "method-override": "^2.3.8",
         "mysql": "^2.13.0",
-        "path": "^0.12.7"
+        "path": "^0.12.7",
+        "sequelize": "^3.30.4"
     },
     "devDependencies": {},
     "scripts": {
